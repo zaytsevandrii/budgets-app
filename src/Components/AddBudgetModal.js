@@ -5,15 +5,14 @@ import { useBudgets } from "../context/BudgetContext"
 export default function AddBudgetModal({ show, handleClose }) {
   const nameRef = useRef()
   const maxRef = useRef()
-  const {addBudget} = useBudgets()
+  const { addBudget } = useBudgets()
   function handleSubmit(e) {
-      e.preventDefault()
-      addBudget(
-      {
-            name:nameRef.current.value,
-            max:parseFloat(maxRef.current.value)
-      })
-      handleClose()
+    e.preventDefault()
+    addBudget({
+      name: nameRef.current.value,
+      max: parseFloat(maxRef.current.value),
+    })
+    handleClose()
   }
 
   return (
